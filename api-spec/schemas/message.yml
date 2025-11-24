@@ -1,0 +1,33 @@
+type: object
+required:
+  - id
+  - member_id
+  - username
+  - text
+  - created_at
+properties:
+  id:
+    type: integer
+    format: int64
+    description: Уникальный идентификатор сообщения
+    example: 1
+  member_id:
+    type: integer
+    format: int64
+    description: ID пользователя, отправившего сообщение
+    example: 1
+  username:
+    type: string
+    description: Имя пользователя, отправившего сообщение
+    example: "john_doe"
+  text:
+    type: string
+    description: Текст сообщения
+    minLength: 1
+    maxLength: 1000
+    example: "Привет всем!"
+  created_at:
+    type: string
+    format: date-time
+    description: Дата и время отправки сообщения
+    example: "2025-11-24T17:02:12.008Z"

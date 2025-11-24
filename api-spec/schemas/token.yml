@@ -1,0 +1,21 @@
+type: object
+required:
+  - access_token
+  - token_type
+properties:
+  access_token:
+    type: string
+    description: JWT токен доступа
+    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxfQ.xyz"
+  token_type:
+    type: string
+    description: Тип токена
+    example: "Bearer"
+  username:
+    type: string
+    description: Имя пользователя
+    example: "john_doe"
+  user_id:
+    type: integer
+    description: ID пользователя
+    example: 1

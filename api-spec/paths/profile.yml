@@ -1,0 +1,23 @@
+profile:
+  get:
+    summary: Получение профиля текущего пользователя
+    description: Возвращает информацию о профиле авторизованного пользователя
+    tags:
+      - Профиль
+    security:
+      - BearerAuth: []
+    responses:
+      '200':
+        description: Профиль успешно получен
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/member.yml'
+      '401':
+        description: Не авторизован
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/error.yml'
+            example:
+              error: "Требуется авторизация"

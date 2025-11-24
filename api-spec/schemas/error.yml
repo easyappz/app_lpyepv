@@ -1,0 +1,24 @@
+type: object
+required:
+  - error
+properties:
+  error:
+    type: string
+    description: Сообщение об ошибке
+    example: "Неверные учетные данные"
+  detail:
+    type: string
+    description: Детальное описание ошибки
+    example: "Пользователь с таким именем уже существует"
+  field_errors:
+    type: object
+    description: Ошибки валидации полей
+    additionalProperties:
+      type: array
+      items:
+        type: string
+    example:
+      username:
+        - "Это поле обязательно"
+      password:
+        - "Пароль должен содержать минимум 6 символов"

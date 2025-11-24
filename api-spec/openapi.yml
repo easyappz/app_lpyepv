@@ -1,0 +1,33 @@
+openapi: 3.1.0
+info:
+  title: Групповой чат API
+  version: 1.0.0
+  description: API для группового чата с регистрацией и авторизацией
+servers:
+  - url: /api
+    description: API сервер
+paths:
+  /register:
+    $ref: './paths/auth.yml#/register'
+  /login:
+    $ref: './paths/auth.yml#/login'
+  /messages:
+    $ref: './paths/messages.yml#/messages'
+  /profile:
+    $ref: './paths/profile.yml#/profile'
+components:
+  schemas:
+    Member:
+      $ref: './schemas/member.yml'
+    Message:
+      $ref: './schemas/message.yml'
+    Token:
+      $ref: './schemas/token.yml'
+    Error:
+      $ref: './schemas/error.yml'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT токен авторизации
