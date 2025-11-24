@@ -17,7 +17,8 @@ const Register = () => {
 
     try {
       const data = await registerUser(username, password);
-      localStorage.setItem('token', data.token);
+      localStorage.setItem('token', data.access_token);
+      localStorage.setItem('username', data.username);
       navigate('/');
     } catch (err) {
       if (err.response?.data?.error) {
