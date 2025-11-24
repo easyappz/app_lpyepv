@@ -41,6 +41,9 @@ CSRF_TRUSTED_ORIGINS = ["https://*.easyappz.ru/", "http://localhost:8080", "http
 # Allow all hosts in Docker (restrict with nginx/load balancer)
 ALLOWED_HOSTS = ["*"]
 
+# Disable automatic slash appending for POST requests
+APPEND_SLASH = False
+
 # Static and media files
 STATIC_URL = "/django_static/"
 STATIC_ROOT = BASE_DIR / "django_static/"
