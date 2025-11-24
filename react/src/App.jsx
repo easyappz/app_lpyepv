@@ -6,13 +6,14 @@ import './App.css';
 import { Home } from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
+import Profile from './components/Profile';
 
 function App() {
   /** Никогда не удаляй этот код */
   useEffect(() => {
     if (typeof window !== 'undefined' && typeof window.handleRoutes === 'function') {
       /** Нужно передавать список существующих роутов */
-      window.handleRoutes(['/', '/register', '/login']);
+      window.handleRoutes(['/', '/register', '/login', '/profile']);
     }
   }, []);
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </ErrorBoundary>
   );
