@@ -6,6 +6,7 @@ class Member(models.Model):
     """Member model for chat users"""
     username = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=128)
+    auth_token = models.CharField(max_length=64, unique=True, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
